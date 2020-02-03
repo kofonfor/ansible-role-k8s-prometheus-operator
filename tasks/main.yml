@@ -4,5 +4,11 @@
 - name: enable stable repo
   command: helm repo add stable https://kubernetes-charts.storage.googleapis.com
 
+- name: put a PVC YAML
+  template: src=prometheus-pvc.yml dest=/tmp/prometheus-pvc.yml
+
+- name: create a PVC for Prometheus
+  command: kubectl apply -f /tmp/prometheus-pvc.yml -n {{ k8s_namespace }}
+
 - name: upgrade {{ prometheus_operator_helm_release }} release using a Helm chart
   shell: helm upgrade {{ prometheus_operator_helm_release }} stable/prometheus-operator --install --namespace {{ k8s_namespace }} -f /tmp/prometheus_operator-{{ prometheus_operator_helm_release }}.yml
