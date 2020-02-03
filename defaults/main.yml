@@ -1,2 +1,3 @@
 prometheus_operator_helm_release: prometheus
 prometheus_operator_storage_class_name: local-path
+prometheus_operator_service_type: ClusterIP

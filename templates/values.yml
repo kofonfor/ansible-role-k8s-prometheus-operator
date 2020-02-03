@@ -8,3 +8,5 @@ prometheus:
           resources:
             requests:
               storage: 1Gi
+  service:
+    type: {{ prometheus_operator_service_type }}
