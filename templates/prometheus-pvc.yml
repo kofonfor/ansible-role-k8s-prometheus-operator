@@ -14,7 +14,6 @@ spec:
       storage: 1Gi
   storageClassName: {{ prometheus_operator_storage_class_name }}
   volumeMode: Filesystem
-  volumeName: pvc-{{ prometheus_operator_helm_release }}-prometheus-0
 status:
   accessModes:
   - ReadWriteOnce
