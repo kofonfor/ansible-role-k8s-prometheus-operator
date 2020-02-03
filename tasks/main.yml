@@ -4,11 +4,11 @@
 - name: enable stable repo
   command: helm repo add stable https://kubernetes-charts.storage.googleapis.com
 
-- name: put a PV YAML
-  template: src=prometheus-pv.yml dest=/tmp/prometheus-pv.yml
-
-- name: create a PV for Prometheus
-  command: kubectl apply -f /tmp/prometheus-pv.yml -n {{ k8s_namespace }}
+#- name: put a PV YAML
+#  template: src=prometheus-pv.yml dest=/tmp/prometheus-pv.yml
+#
+#- name: create a PV for Prometheus
+#  command: kubectl apply -f /tmp/prometheus-pv.yml -n {{ k8s_namespace }}
 
 - name: put a PVC YAML
   template: src=prometheus-pvc.yml dest=/tmp/prometheus-pvc.yml

@@ -8,14 +8,7 @@ metadata:
 spec:
   accessModes:
   - ReadWriteOnce
-  dataSource: null
   resources:
     requests:
       storage: 1Gi
   storageClassName: {{ prometheus_operator_storage_class_name }}
-  volumeMode: Filesystem
-status:
-  accessModes:
-  - ReadWriteOnce
-  capacity:
-    storage: 1Gi
