@@ -10,3 +10,6 @@ prometheus:
               storage: 1Gi
   service:
     type: {{ prometheus_operator_service_type }}
+grafana:
+  service:
+    type: {{ prometheus_operator_grafana_service_type }}
