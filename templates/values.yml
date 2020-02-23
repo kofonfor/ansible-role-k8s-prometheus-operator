@@ -14,3 +14,4 @@ grafana:
   service:
     type: {{ prometheus_operator_grafana_service_type }}
     nodePort: {{ prometheus_operator_grafana_nodeport }}
+  adminPassword: {{ prometheus_operator_grafana_adminpassword }}
